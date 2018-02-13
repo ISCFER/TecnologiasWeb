@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style media="screen">
+	#example{
+		width: 300px;
+		height: 300px;
+		border: 2px solid #C45;
+	}
+	</style>
+</head>
+<body>
+	<h1>Ejemplo Git</h1>
+	<canvas id="example">
+		Este texto se muestra si su navegador no soporta el lienzo(canvas) de HTML5
+	</canvas>
+
+	<script type="text/javascript">
+		let canvas = document.getElementById("example");
+		let context = canvas.getContext("2d");
+		context.fillStyle = "rgb(200,0,0)";
+		/*
+		context.beginPath();
+		context.moveTo(75,100);
+		context.lineTo(100,75);
+		context.lineTo(100,25);
+		//context.fill();
+		context.closePath();
+		context.stroke();//dibuja contorno
+		*/
+
+		context.beginPath();
+		//parametros: x, y, radio, angulo inicial, angulo final, en que sentido de la manecilla
+		context.arc(65, 65, 50, 0, Math.PI*2, true);
+		context.moveTo(55,50);
+		context.arc(50,50, 5, 0, Math.PI*2, true);
+		context.moveTo(85,50);
+		context.arc(80,50,5,0, Math.PI*2, true);
+		context.closePath();
+		context.stroke();
+		context.beginPath();
+		context.moveTo(100, 70);
+		context.arc(65, 70, 35, 0, Math.PI, false);
+		context.stroke();
+		//context.fill();
+		
+
+	</script>
+</body>
+<html>
